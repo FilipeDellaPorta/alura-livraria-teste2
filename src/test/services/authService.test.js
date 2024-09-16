@@ -42,7 +42,7 @@ describe("Testando a authService.cadastrarUsuario", () => {
 
     const usuarioSave = authService.cadastrarUsuario(usuarioMock);
 
-    await expect(usuarioSave).rejects.toThrowError('O email já esta cadastrado!');
+    await expect(usuarioSave).rejects.toThrowError('O email já está cadastrado!');
   });
   it('Ao cadastrar um usuário deve ser retornada uma mensagem informando que o usuário foi cadastrado', async () => {
     const data = {
@@ -53,7 +53,7 @@ describe("Testando a authService.cadastrarUsuario", () => {
 
     const resultado = await authService.cadastrarUsuario(data);
 
-    expect(resultado.message).toEqual('usuario criado');
+    expect(resultado.message).toEqual('usuário criado');
 
     await Usuario.excluir(resultado.content.id);
   });
