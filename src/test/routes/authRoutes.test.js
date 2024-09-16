@@ -11,3 +11,17 @@ beforeEach(() => {
 afterEach(() => {
   servidor.close();
 });
+
+describe("Testando a rota login (POST)", () => {
+  it("O login deve possuir um e-mail e senha para se autenticar", async () => {
+    const loginMock = {
+      email: "filipe@f.com",
+    };
+
+    await request(servidor)
+      .post("/login")
+      .send(loginMock)
+      .expect(500)
+      .expect('"A senha de usuario é obrigatório."');
+  });
+});
