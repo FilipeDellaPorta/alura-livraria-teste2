@@ -44,7 +44,7 @@ Este projeto já conta com o código necessário para subir a API em um servidor
 │   │   └── livrosImagensController.js
 │   │   └── usuariosController.js
 │   ├── db
-│   │   └── dbconfig.js
+│   │   └── dbConfiguration.js
 │   │   └── livraria.sqlite
 │   ├── middleware
 │   │   └── autenticado.js
