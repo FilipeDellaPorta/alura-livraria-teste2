@@ -7,12 +7,12 @@ describe("Testando configDB", () => {
       nome: "Filipe",
       nacionalidade: "Brasileiro",
       created_at: new Date().toISOString(),
-      update_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
     };
 
     const autorSalvo = await db("autores")
       .insert(autorMock)
-      .then(retorno, () => db("autores").where("id", retorno[0]))
+      .then((retorno) => db("autores").where("id", retorno[0]))
       .then((autorSelecionado) => autorSelecionado[0]);
 
     expect(autorSalvo.nome).toBe(autorMock.nome);
