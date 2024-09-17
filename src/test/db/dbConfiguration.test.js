@@ -1,11 +1,11 @@
 import { describe, expect } from "@jest/globals";
-import db from "../../db/dbConfiguration.js"
+import db from "../../db/dbConfiguration.js";
 
 describe("Testando configDB", () => {
   it("Teste de conexão com o banco de dados", async () => {
     const autorMock = {
-      nome: "Filipe",
-      nacionalidade: "Brasileiro",
+      nome: "Luana",
+      nacionalidade: "Brasileira",
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
@@ -16,5 +16,7 @@ describe("Testando configDB", () => {
       .then((autorSelecionado) => autorSelecionado[0]);
 
     expect(autorSalvo.nome).toBe(autorMock.nome);
+
+    await db("autores").where({ id: autorSalvo.id }).del();
   });
 });
