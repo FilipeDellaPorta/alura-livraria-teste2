@@ -1,4 +1,4 @@
-import db from '../db/dbConfig.js';
+import db from '../db/dbConfiguration.js';
 
 class Autor {
   constructor({

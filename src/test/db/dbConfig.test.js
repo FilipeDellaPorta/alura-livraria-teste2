@@ -1,5 +1,5 @@
 import { describe, expect } from "@jest/globals";
-import db from "../../db/dbConfig.js";
+import db from "../../db/dbConfiguration.js"
 
 describe("Testando configDB", () => {
   it("Teste de conexão com o banco de dados", async () => {
